@@ -1,0 +1,31 @@
+{
+  "condition": "alternative",
+  "terms": [
+    {
+      "condition": "entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "items": [
+              "totem_of_undying"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "condition": "entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "offhand": {
+            "items": [
+              "totem_of_undying"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

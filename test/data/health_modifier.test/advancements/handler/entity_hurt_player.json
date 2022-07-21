@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "": {
+      "trigger": "entity_hurt_player"
+    }
+  },
+  "rewards": {
+    "function": "health_modifier.test:handler/entity_hurt_player"
+  }
+}

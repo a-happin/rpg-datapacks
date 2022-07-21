@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "": {
+      "trigger": "tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "health_modifier.health": {
+                "min": -2147483648
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "health_modifier:modify/"
+  }
+}

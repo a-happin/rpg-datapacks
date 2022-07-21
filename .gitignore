@@ -1,1 +1,6 @@
 /build
+/auto_reload
+/datapack-loaded
+/recovery
+/01.player.tick
+/02.player.initialize
