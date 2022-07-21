@@ -1,7 +1,9 @@
-datapack-template
+rpg-datapacks
 ==
 
 ## Features
+
+これを導入することでRPGを作ることができます(大嘘)
 
 ## Usage
 
