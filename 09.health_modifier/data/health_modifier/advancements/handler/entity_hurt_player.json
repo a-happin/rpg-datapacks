@@ -10,7 +10,7 @@
               "condition": "entity_scores",
               "entity": "this",
               "scores": {
-                "player.deaths": {
+                "player.is_dead": {
                   "min": 1
                 }
               }
