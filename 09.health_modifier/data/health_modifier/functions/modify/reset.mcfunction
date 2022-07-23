@@ -1,5 +1,5 @@
 #> health_modifier:modify/reset
-#@within function health_modifier:tick
+#@within function health_modifier:handler/tick
 
 attribute @s generic.max_health modifier remove 8e0f1b8b-1819-4d0e-859a-000000000001
 attribute @s generic.max_health modifier remove 8e0f1b8b-1819-4d0e-859a-000000000002
