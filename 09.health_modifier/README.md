@@ -27,6 +27,7 @@ call `tag/function #minecraft:load_once` once
 
 - Minecraft JE 1.19
 - [player.tick](https://github.com/a-happin/player-datapacks/tree/master/10.player.tick)
+- [player.initialize](https://github.com/a-happin/player-datapacks/tree/master/11.player.initialize)
 
 ## Installation
 
