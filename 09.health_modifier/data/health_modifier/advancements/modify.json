@@ -9,7 +9,7 @@
             "entity": "this",
             "scores": {
               "health_modifier.health": {
-                "min": -2147483648
+                "min": 1
               }
             }
           }
