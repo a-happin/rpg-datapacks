@@ -12,6 +12,5 @@
   execute store result score $ health_modifier run data get storage : _[-2].damage -1024
   execute if score $ health_modifier matches ..-1 if data storage : _[-1].NBT.AbsorptionAmount run function health_modifier:damage/non-player/substract_absorption_amount
   execute if score $ health_modifier matches ..-1 if data storage : _[-1].NBT.Health run function health_modifier:damage/non-player/substract_health
-  execute if score $ health_modifier matches ..0 run function health_modifier:damage/non-player/kill
   execute unless data storage : _[-1].kill run function health_modifier:damage/non-player/apply_nbt
 scoreboard objectives remove health_modifier
