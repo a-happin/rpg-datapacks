@@ -19,6 +19,16 @@ health_modifier
 |objective|description|
 |:--|:--|
 
+### Functions
+
+#### `health_modifier:damage/`
+- input
+  - `storage : _[-1].damage` double: damage amount
+  - `storage : _[-1].death_message` string of JSON
+  - `storage : _[-1].NBT` (optional) NBT cache of `@s`
+
+
+
 ## Usage
 
 call `tag/function #minecraft:load_once` once
