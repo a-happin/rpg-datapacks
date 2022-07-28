@@ -4,5 +4,5 @@
 advancement revoke @s only health_modifier.test:handler/entity_hurt_player
 data modify storage : _ append value {}
   data modify storage : _[-1].HurtTime set from entity @s HurtTime
-  # function health_modifier.test:example1
+  tellraw @a [{"text": "Debug» ", "color": "green"}, "health_modifier.test:handler/entity_hurt_player» ", {"storage": ":", "nbt": "_[-1]"}]
 data remove storage : _[-1]

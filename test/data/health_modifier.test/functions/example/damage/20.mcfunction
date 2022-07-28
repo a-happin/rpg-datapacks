@@ -1,4 +1,4 @@
-#> health_modifier.test:example20
+#> health_modifier.test:example/damage/20
 #@user
 
 
