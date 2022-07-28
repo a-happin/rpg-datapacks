@@ -8,3 +8,4 @@
 #>
 #@within * health_modifier:**
   #declare score_holder $
+  #declare score_holder $a
