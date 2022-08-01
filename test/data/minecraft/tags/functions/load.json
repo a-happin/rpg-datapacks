@@ -1,6 +1,5 @@
 {
   "values": [
-    "#load_once",
-    "xp_modifier.test:load"
+    "#load_once"
   ]
 }
