@@ -1,16 +1,12 @@
 #> health_modifier:modify/
 #@within advancement health_modifier:modify
 
-data modify storage : _ append value {relative_health: 0}
+data modify storage : _ append value {a: [I; 0]}
   execute store result score $ health_modifier.health run attribute @s generic.max_health get 1024
   scoreboard players operation @s health_modifier.health < $ health_modifier.health
-  scoreboard players operation $ health_modifier.health -= @s health_modifier.health
+  execute store result storage : _[-1].a[0] long 4096 run scoreboard players operation $ health_modifier.health -= @s health_modifier.health
 
-  ## calc relative_health
-  execute if entity @s[scores={health_modifier.health=..1023}] store result storage : _[-1].relative_health int 1 run scoreboard players remove @s health_modifier.health 1024
-
-  scoreboard players set @s health_modifier.health 4096
-  scoreboard players operation $ health_modifier.health *= @s health_modifier.health
+  execute store result score $ health_modifier.health run data get storage : _[-1].a[0]
   execute if score $ health_modifier.health matches 0.. run attribute @s generic.max_health modifier add 8e0f1b8b-1819-4d0e-859a-000000080000 "health_modifier" 0 add
   execute unless score $ health_modifier.health matches 0.. run attribute @s generic.max_health modifier add 8e0f1b8b-1819-4d0e-859a-000000080000 "health_modifier" -512 add
 
@@ -91,5 +87,8 @@ data modify storage : _ append value {relative_health: 0}
   execute unless score $ health_modifier.health matches 0.. run attribute @s generic.max_health modifier add 8e0f1b8b-1819-4d0e-859a-000000000001 "health_modifier" -0.0009765625 add
 
   effect give @s instant_health 1 252 true
-  execute store result score @s health_modifier.health run data get storage : _[-1].relative_health
+
+  ## calc relative_health
+  scoreboard players remove @s health_modifier.health 1024
+  execute if entity @s[scores={health_modifier.health=1..}] run scoreboard players set @s health_modifier.health 0
 data remove storage : _[-1]

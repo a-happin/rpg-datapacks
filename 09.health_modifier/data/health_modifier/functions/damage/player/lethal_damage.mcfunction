@@ -4,7 +4,7 @@
 scoreboard players set @s health_modifier.health 0
 
 ## NBT cache
-execute if data storage : _[-2].NBT run data modify storage : _[-1].NBT set from storage : _[-2].NBT
+execute unless data storage : _[-1].NBT if data storage : _[-2].NBT run data modify storage : _[-1].NBT set from storage : _[-2].NBT
 execute unless data storage : _[-1].NBT.HurtTime run data modify storage : _[-1].NBT set from entity @s
 
 ## ダメージはHurtTimeの減算後に入る？ので1引く

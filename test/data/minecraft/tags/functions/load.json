@@ -1,6 +1,6 @@
 {
   "values": [
-    "#load_once",
+    {"id": "#load_once", "required": false},
     "xp_modifier.test:load"
   ]
 }
