@@ -4,8 +4,8 @@
 #>
 #@within
 #  function xp_modifier.test:handler/tick
-#  function xp_modifier.test:apply
+#  function xp_modifier.test:handler/changed_xp_by_vanilla
   #declare score_holder $
 
-execute store result score $ xp_modifier.level run experience query @s levels
-execute unless score @s xp_modifier.level = $ xp_modifier.level run function xp_modifier.test:apply
+execute store result score $ mp run experience query @s levels
+execute unless score @s mp = $ mp run function xp_modifier.test:handler/changed_xp_by_vanilla

@@ -1,5 +1,8 @@
 #> xp_modifier.test:apply
-#@within function xp_modifier.test:handler/tick
+#@within function xp_modifier.test:handler/changed_xp_by_vanilla
 
-execute store result score @s xp_modifier.xp run scoreboard players operation @s xp_modifier.level = $ xp_modifier.level
-function xp_modifier:apply
+data modify storage : _ append value {a: [I; 0]}
+  execute store result storage : _[-1].xp int 1 store result storage : _[-1].level int 1 run scoreboard players operation @s mp < @s mp_max
+  execute store result storage : _[-1].xp_max int 1 run scoreboard players get @s mp_max
+  function xp_modifier:apply
+data remove storage : _[-1]
