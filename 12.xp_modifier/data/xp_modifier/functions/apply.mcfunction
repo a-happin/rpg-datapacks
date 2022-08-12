@@ -17,37 +17,37 @@
   scoreboard objectives add xp_modifier dummy
   #declare score_holder $
 
-  ## Lv.38の経験値ポイントは0~183
-  experience set @s 38 levels
-  experience set @s 0 points
+  ## Lv.46の経験値ポイントは0~255
+  experience set @s 46 levels
+  experience set @s 255 points
   execute store result score $ xp_modifier run data get storage : _[-1].xp
   execute store result score @s xp_modifier run data get storage : _[-1].xp_max
-  execute store result storage : _[-1].a[0] long 183 run scoreboard players operation $ xp_modifier < @s xp_modifier
+  execute store result storage : _[-1].a[0] long 255 run scoreboard players operation $ xp_modifier < @s xp_modifier
   execute store result score $ xp_modifier run data get storage : _[-1].a[0]
   execute store result storage : _[-1].a[0] long 16777216 run scoreboard players operation $ xp_modifier /= @s xp_modifier
   execute store result score $ xp_modifier run data get storage : _[-1].a[0]
-  execute if score $ xp_modifier matches ..-1 run experience add @s 128 points
+  execute if score $ xp_modifier matches 0.. run experience add @s -128 points
 
   scoreboard players operation $ xp_modifier += $ xp_modifier
-  execute if score $ xp_modifier matches ..-1 run experience add @s 64 points
+  execute if score $ xp_modifier matches 0.. run experience add @s -64 points
 
   scoreboard players operation $ xp_modifier += $ xp_modifier
-  execute if score $ xp_modifier matches ..-1 run experience add @s 32 points
+  execute if score $ xp_modifier matches 0.. run experience add @s -32 points
 
   scoreboard players operation $ xp_modifier += $ xp_modifier
-  execute if score $ xp_modifier matches ..-1 run experience add @s 16 points
+  execute if score $ xp_modifier matches 0.. run experience add @s -16 points
 
   scoreboard players operation $ xp_modifier += $ xp_modifier
-  execute if score $ xp_modifier matches ..-1 run experience add @s 8 points
+  execute if score $ xp_modifier matches 0.. run experience add @s -8 points
 
   scoreboard players operation $ xp_modifier += $ xp_modifier
-  execute if score $ xp_modifier matches ..-1 run experience add @s 4 points
+  execute if score $ xp_modifier matches 0.. run experience add @s -4 points
 
   scoreboard players operation $ xp_modifier += $ xp_modifier
-  execute if score $ xp_modifier matches ..-1 run experience add @s 2 points
+  execute if score $ xp_modifier matches 0.. run experience add @s -2 points
 
   scoreboard players operation $ xp_modifier += $ xp_modifier
-  execute if score $ xp_modifier matches ..-1 run experience add @s 1 points
+  execute if score $ xp_modifier matches 0.. run experience add @s -1 points
 
 
   ## `storage : _[-1].level`をエンチャントレベルに代入
