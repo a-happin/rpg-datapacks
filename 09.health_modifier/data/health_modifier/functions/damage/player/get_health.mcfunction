@@ -2,8 +2,7 @@
 #@within function health_modifier:damage/player/
 
 ## NBT cache
-execute if data storage : _[-2].NBT run data modify storage : _[-1].NBT set from storage : _[-2].NBT
-execute unless data storage : _[-1].NBT.Health run data modify storage : _[-1].NBT set from entity @s
+execute if data storage : nbt.Health store result score $ health_modifier.health run data get storage : nbt.Health 1024
+execute unless data storage : nbt.Health store result score $ health_modifier.health run data get entity @s Health 1024
 
-execute store result score $ health_modifier.health run data get storage : _[-1].NBT.Health 1024
 scoreboard players operation @s health_modifier.health += $ health_modifier.health

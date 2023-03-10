@@ -3,12 +3,9 @@
 
 scoreboard players set @s health_modifier.health 0
 
-## NBT cache
-execute unless data storage : _[-1].NBT if data storage : _[-2].NBT run data modify storage : _[-1].NBT set from storage : _[-2].NBT
-execute unless data storage : _[-1].NBT.HurtTime run data modify storage : _[-1].NBT set from entity @s
-
 ## ダメージはHurtTimeの減算後に入る？ので1引く
-execute store result storage : _[-1].switch.case int 0.9999999999 run data get storage : _[-1].NBT.HurtTime
+execute if data storage : nbt.HurtTime store result storage : _[-1].switch.case int 0.9999999999 run data get storage : nbt.HurtTime
+execute unless data storage : nbt.HurtTime store result storage : _[-1].switch.case int 0.9999999999 run data get entity @s HurtTime
 
 ## トーテム発動時にどうせeffectが消えるので消す(resistanceが消えれば良い)
 effect clear @s
